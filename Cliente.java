@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.mavenproject1.newpackage;
+package com.mycompany.clinicavet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,16 +17,20 @@ public class Cliente {
     private String endereco;
     private String telefone;
     private String email;
-    private long CEP;
+    private String CEP;
     private int ID;
+    
+    private List<Animal> animais;
 
-    public Cliente(String nome, String endereco, String telefone, String email, long CEP, int ID) {
+    public Cliente(String nome, String endereco, String telefone, String email, String CEP, int ID) {
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
         this.CEP = CEP;
         this.ID = ID;
+        this.animais = new ArrayList<Animal>();
+  
     }
 
     public String getNome() {
@@ -58,11 +65,11 @@ public class Cliente {
         this.email = email;
     }
 
-    public long getCEP() {
+    public String getCEP() {
         return CEP;
     }
 
-    public void setCEP(long CEP) {
+    public void setCEP(String CEP) {
         this.CEP = CEP;
     }
 
@@ -70,6 +77,20 @@ public class Cliente {
         return ID;
     }
 
+    public void AddAnimal(Animal animal) {
+        if(!animal.getNome().isBlank()) {
+            animais.add(animal);
+        }
+    }
     
+    public List<Animal> getAnimais() {
+        return animais;
+    }
     
+    @Override
+    public String toString() {
+        String desc = "Cliente(" + "nome" + nome + ", endereço" + endereco + ", telefone" + telefone + ", email" + email + ", CEP" + CEP + ", ID" + ID + ")";
+        String strAnimais = animais.toString();
+        return desc + "\n" + strAnimais;
+    }
 }
