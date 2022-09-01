@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.mavenproject1.newpackage;
+package com.mycompany.clinicavet;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -11,36 +12,58 @@ import java.util.Date;
  * @author f169401
  */
 public class Tratamento {
-    
-    private Date datainic;
-    private Date datafin;
-    private int ID;
+ private String nome;
+ private Calendar dtInicio;
+ private Calendar dtFim;
+ private int idAnimal;
+ private boolean terminou;
 
-    public Tratamento(Date datainic, Date datafin, int ID) {
-        this.datainic = datainic;
-        this.datafin = datafin;
-        this.ID = ID;
+    public Tratamento(String nome, Calendar dtInicio, Calendar dtFim, int idAnimal, boolean terminou) {
+        this.nome = nome;
+        this.dtInicio = dtInicio;
+        this.dtFim = dtFim;
+        this.idAnimal = idAnimal;
+        this.terminou = terminou;
+    }
+ 
+ 
+
+    public String getNome() {
+        return nome;
     }
 
-    public Date getDatainic() {
-        return datainic;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setDatainic(Date datainic) {
-        this.datainic = datainic;
+    public Calendar getDtInicio() {
+        return dtInicio;
     }
 
-    public Date getDatafin() {
-        return datafin;
+    public void setDtInicio(Calendar dtInicio) {
+        this.dtInicio = dtInicio;
     }
 
-    public void setDatafin(Date datafin) {
-        this.datafin = datafin;
+    public Calendar getDtFim() {
+        return dtFim;
     }
 
-    public int getID() {
-        return ID;
+    public void setDtFim(Calendar dtFim) {
+        this.dtFim = dtFim;
     }
 
+    public int getIdAnimal() {
+        return idAnimal;
+    }
+
+    public boolean isTerminou() {
+        return terminou;
+    }
+
+    public void setTerminou(boolean terminou) {
+        this.terminou = terminou;
+    }
+ 
+ 
     
 }
