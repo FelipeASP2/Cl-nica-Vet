@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.mavenproject1.newpackage;
+package com.mycompany.clinicavet;
 
 /**
  *
@@ -11,7 +11,7 @@ package com.mycompany.mavenproject1.newpackage;
 public class Animal {
     private String nome;
     private int idade;
-    private int sexo;
+    private int sexo;//0 = macho e 1 = femea
     private int ID;
 
     public Animal(String nome, int idade, int sexo, int ID) {
@@ -49,5 +49,9 @@ public class Animal {
         return ID;
     }
      
+    @Override
+    public String toString() {
+        return "Animal(" + "nome" + nome + ")";
+    }
 
 }
