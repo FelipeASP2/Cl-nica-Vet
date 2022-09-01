@@ -2,24 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.mavenproject1.newpackage;
+package com.mycompany.clinicavet;
 
 /**
  *
  * @author f169401
  */
 public class Exame {
-    
-    private int ID;
     private String descricao;
+    private int idConsulta;
 
-    public Exame(int ID, String descricao) {
-        this.ID = ID;
+    public Exame(String descricao, int idConsulta) {
         this.descricao = descricao;
-    }
-
-    public int getID() {
-        return ID;
+        this.idConsulta = idConsulta;
     }
 
     public String getDescricao() {
@@ -28,6 +23,14 @@ public class Exame {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public int getIdConsulta() {
+        return idConsulta;
+    }
+
+    public void setIdConsulta(int idConsulta) {
+        this.idConsulta = idConsulta;
     }
     
     
