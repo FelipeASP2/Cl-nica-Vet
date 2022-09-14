@@ -68,7 +68,7 @@ public abstract class DAO {
 
     public static void terminar() {
         try {
-            (DAOPROF.getConnection()).close();
+            (DAO.getConnection()).close();
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }
@@ -79,7 +79,7 @@ public abstract class DAO {
         try {
             PreparedStatement stmt;
             // Table client:
-            stmt = DAOPROF.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS cliente( \n"
+            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS cliente( \n"
                     + "id INTEGER PRIMARY KEY, \n"
                     + "nome VARCHAR, \n"
                     + "end VARCHAR, \n"
@@ -88,7 +88,7 @@ public abstract class DAO {
                     + "telefone VARCHAR); \n");
             executeUpdate(stmt);
             // Table animal:
-            stmt = DAOPROF.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS animal( \n"
+            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS animal( \n"
                     + "id INTEGER PRIMARY KEY, \n"
                     + "nome VARCHAR, \n"
                     + "anoNasc INTEGER, \n"
@@ -97,19 +97,19 @@ public abstract class DAO {
                     + "id_cliente INTEGER); \n");
             executeUpdate(stmt);
             // Table species:
-            stmt = DAOPROF.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS especie( \n"
+            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS especie( \n"
                     + "id INTEGER PRIMARY KEY, \n"
                     + "nome VARCHAR); \n");
             executeUpdate(stmt);
             // Table vet:
-            stmt = DAOPROF.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS vet( \n"
+            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS vet( \n"
                     + "id INTEGER PRIMARY KEY, \n"
                     + "nome VARCHAR, \n"
                     + "email VARCHAR, \n"
                     + "telefone VARCHAR); \n");
             executeUpdate(stmt);        
             // Table treatment:
-            stmt = DAOPROF.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS tratamento( \n"
+            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS tratamento( \n"
                     + "id INTEGER PRIMARY KEY, \n"
                     + "id_animal INTEGER, \n"
                     + "nome VARCHAR, \n"
@@ -118,7 +118,7 @@ public abstract class DAO {
                     + "terminado INTEGER); \n");
             executeUpdate(stmt);
             // Table appointment:
-            stmt = DAOPROF.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS consulta( \n"
+            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS consulta( \n"
                     + "id INTEGER PRIMARY KEY, \n"
                     + "data TEXT, \n"
                     + "horario VARCHAR, \n"
@@ -129,13 +129,13 @@ public abstract class DAO {
                     + "terminado INTEGER); \n");
             executeUpdate(stmt);            
              // Table exam:
-            stmt = DAOPROF.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS exame( \n"
+            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS exame( \n"
                     + "id INTEGER PRIMARY KEY, \n"
                     + "nome VARCHAR, \n"
                     + "id_consulta INTEGER); \n");
             executeUpdate(stmt);      
             // Default element for species:
-            stmt = DAOPROF.getConnection().prepareStatement("INSERT OR IGNORE INTO especie (id, nome) VALUES (1, 'Cachorro')");
+            stmt = DAO.getConnection().prepareStatement("INSERT OR IGNORE INTO especie (id, nome) VALUES (1, 'Cachorro')");
             executeUpdate(stmt);
             return true;
         } catch (SQLException ex) {
