@@ -11,58 +11,51 @@ import java.util.Calendar;
  * @author f169401
  */
 public class Tratamento {
- private String nome;
- private Calendar dtInicio;
- private Calendar dtFim;
+ private String datainicial;
+ private String datafinal;
+ private int id;
  private int idAnimal;
- private boolean terminou;
 
-    public Tratamento(String nome, Calendar dtInicio, Calendar dtFim, int idAnimal, boolean terminou) {
-        this.nome = nome;
-        this.dtInicio = dtInicio;
-        this.dtFim = dtFim;
+    public Tratamento(String datainicial, String datafinal, int idAnimal, ) {
+        this.datainicial = datainicial;
+        this.datafinal = datafinal;
         this.idAnimal = idAnimal;
-        this.terminou = terminou;
     }
  
  
+    public int getID() {
+        return id;
+ }
+ 
 
-    public String getNome() {
-        return nome;
+    public String getDatainicial() {
+        return datainicial;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setDatainicial(String datainicial) {
+        this.datainicial = datainicial;
     }
 
-    public Calendar getDtInicio() {
-        return dtInicio;
+    public String getDatafinal() {
+        return datafinal;
     }
 
-    public void setDtInicio(Calendar dtInicio) {
-        this.dtInicio = dtInicio;
-    }
-
-    public Calendar getDtFim() {
-        return dtFim;
-    }
-
-    public void setDtFim(Calendar dtFim) {
-        this.dtFim = dtFim;
+    public void setDatafinal(String datafinal) {
+        this.datafinal = datafinal;
     }
 
     public int getIdAnimal() {
         return idAnimal;
     }
 
-    public boolean isTerminou() {
-        return terminou;
+    public void setIdAnimal() {
+        this.idAnimal = idAnimal;
     }
-
-    public void setTerminou(boolean terminou) {
-        this.terminou = terminou;
+  
+    @Override
+    public String toString() {
+        return this.datainicial + ", " + this.datafinal + " \n";
     }
- 
  
     
 }
