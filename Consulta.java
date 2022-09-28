@@ -4,7 +4,7 @@
  */
 package com.mycompany.clinicavet;
 
-import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -12,8 +12,11 @@ import java.util.Calendar;
  */
 public class Consulta {
     private int ID;
-    private int IDconsulta;
-    private String comentarios;
+    private String data;;
+    private String historico;
+    private int IDtratamento;
+    private int IDvet;
+    private int animalID;
 
     public Consulta(String comentarios, int IDconsulta) {
         this.IDconsulta = consulta;
