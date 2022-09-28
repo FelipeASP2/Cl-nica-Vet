@@ -10,6 +10,7 @@ package com.mycompany.clinicavet;
  */
 public class Espécie {
     private String nome;
+    private int ID;
     
     public Espécie(String nome) {
         this.nome = nome;
@@ -18,5 +19,17 @@ public class Espécie {
     public String getNome() {
         return nome;
     }
+    
+    public void setNome(String nome) {
+        this.nome = nome;    
+    }
+    
+    public int getID() {
+        return ID;   
+    }
 
+    @Override
+    public String toString() {
+        return this.nome + " \n";   
+    }
 }
