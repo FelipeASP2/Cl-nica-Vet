@@ -16,35 +16,62 @@ public class Consulta {
     private String historico;
     private int IDtratamento;
     private int IDvet;
-    private int animalID;
+    private int IDanimal;
 
-    public Consulta(String comentarios, int IDconsulta) {
-        this.IDconsulta = consulta;
-        this.comentarios = comentarios;
+    public Consulta(String data, String historico, int IDtratamento, IDvet, IDanimal) {
+        this.data = data;
+        this.historico = historico;
+        this.IDtratamento = IDtratamento;
+        this.IDvet = IDvet;
+        this.IDanimal = IDanimal;
     }
 
     public int getID() {
         return ID;
     }
     
-    public String getComentarios() {
-        return comentarios;
+    public String getData() {
+        return data;
     }
     
-    public void setComentarios(String comentarios) {
-        this.comentarios = comentarios;
+    public void setData(String data) {
+        this.data = data;
     }
     
-    public int getIDconsulta () {
-        return IDconsulta;   
+    public String getHistorico () {
+        return historico;   
     }
     
-    public void setIDconsulta(int IDconsulta) {
-           this.IDconsulta = IDconsulta;
+    public void setHistorico(Sstring historico) {
+           this.historico = historico;
+    }
+    
+    public int getIDtratamento() {
+        return IDtratamento;   
+    }
+    
+    public void setIDtratamento(int IDtratamento) {
+        this.IDtratamento = IDtratamento;   
+    }
+    
+    public int getIDvet () {
+        return IDvet;   
+    }
+    
+    public void setIDvet(int IDvet) {
+        this.IDvet = IDvet;   
+    }
+    
+    public int getIDanimal () {
+        return IDanimal;   
+    }
+    
+    public void setIDanimal (int IDanimal) {
+        this.IDanimal = IDanimal   
     }
  
     @Override
     public String toString() {
-        return this.comentarios;   
+        return this.data = ", " + this.historico + ", " + this.IDtratamento + ", " + this.IDvet + ", " + this.IDanimal + " \n";   
     }
 }
