@@ -11,80 +11,37 @@ import java.util.Calendar;
  * @author f169401
  */
 public class Consulta {
-    private Calendar data;
-    private int horas;
+    private int ID;
+    private int IDconsulta;
     private String comentarios;
-    private int idAnimal;
-    private int idVet;
-    private int idTratamento;
-    private boolean terminou;
 
-    public Consulta(Calendar data, int horas, String comentarios, int idAnimal, int idVet, int idTratamento, boolean terminou) {
-        this.data = data;
-        this.horas = horas;
+    public Consulta(String comentarios, int IDconsulta) {
+        this.IDconsulta = consulta;
         this.comentarios = comentarios;
-        this.idAnimal = idAnimal;
-        this.idVet = idVet;
-        this.idTratamento = idTratamento;
-        this.terminou = terminou;
     }
 
-    public Calendar getData() {
-        return data;
+    public int getID() {
+        return ID;
     }
-
-    public void setData(Calendar data) {
-        this.data = data;
-    }
-
-    public int getHoras() {
-        return horas;
-    }
-
-    public void setHoras(int horas) {
-        this.horas = horas;
-    }
-
+    
     public String getComentarios() {
         return comentarios;
     }
-
+    
     public void setComentarios(String comentarios) {
         this.comentarios = comentarios;
     }
-
-    public int getIdAnimal() {
-        return idAnimal;
-    }
-
-    public void setIdAnimal(int idAnimal) {
-        this.idAnimal = idAnimal;
-    }
-
-    public int getIdVet() {
-        return idVet;
-    }
-
-    public void setIdVet(int idVet) {
-        this.idVet = idVet;
-    }
-
-    public int getIdTratamento() {
-        return idTratamento;
-    }
-
-    public void setIdTratamento(int idTratamento) {
-        this.idTratamento = idTratamento;
-    }
-
-    public boolean isTerminou() {
-        return terminou;
-    }
-
-    public void setTerminou(boolean terminou) {
-        this.terminou = terminou;
+    
+    public int getIDconsulta () {
+        return IDconsulta;   
     }
     
-    
+    public void setIDconsulta(int IDconsulta) {
+           this.IDconsulta = IDconsulta;
+    }
  
+    @Override
+    public String toString() {
+        return this.comentarios;   
+    }
 }
