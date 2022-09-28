@@ -10,15 +10,14 @@ package com.mycompany.clinicavet;
  */
 public class Animal {
     private String nome;
-    private int idade;
-    private int sexo;//0 = macho e 1 = femea
+    private String genero;
     private int ID;
+    private int IDcliente
 
-    public Animal(String nome, int idade, int sexo, int ID) {
+    public Animal(String nome, String genero, int IDcliente) {
         this.nome = nome;
-        this.idade = idade;
-        this.sexo = sexo;
-        this.ID = ID;
+        this.genero = genero;
+        this.IDcliente = IDcliente;
     }
 
     public String getNome() {
@@ -29,29 +28,26 @@ public class Animal {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+
+    public int getGenero() {
+        return genero;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public int getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(int sexo) {
-        this.sexo = sexo;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public int getID() {
         return ID;
     }
-     
+    
+    publiuc int getIDcliente() {
+        return IDcliente;
+    }
+            
     @Override
     public String toString() {
-        return "Animal(" + "nome" + nome + ")";
+        return this.nome + ", " + this.genero + ", " + this.IDcliente + " \n";
     }
 
 }
