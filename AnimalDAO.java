@@ -28,15 +28,17 @@ public class AnimalDAO extends DAO {
        return (instance==null?(instance = new AnimalDAO()):instance);
    }
    
-   public Animal create(String nome, int idade, int sexo) {
+   public Animal create(int id, String nome, int genero, String spécie_id, String cliente_id) {
        try {
            PreparedStatement stmt;
            stmt = DAO.getConnection().prepareStatement("INSERT INTO animal (nome, idade, sexo) VALUES (?,?,?)");
             stmt.setString(1, nome);
-            stmt.setInt(2, idade);
-            stmt.setInt(3, sexo);
+            stmt.setString(2, genero);
+            stmt.setString(3, spécie_id);
+            stmt.setString(4, cliente_id);
+            stmt.setInd(5, id);
             executeUpdate(stmt);
-        } catch (SQLException ex) {
+        } catch (SQLException e) {
             Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return this.retrieveById(lastId("animal","id"));
@@ -53,7 +55,7 @@ public class AnimalDAO extends DAO {
    private Animal buildObject(ResultSet rs) {
         Animal animal = null;
         try {
-            animal = new Animal(rs.getString("nome"), rs.getInt("idade"), rs.getInt("sexo"), rs.getInt("id"));
+            animal = new Animal(rs.getString("nome"), rs.getInt("genero"), rs.getInt("cliente_id"));
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }
