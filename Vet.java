@@ -9,6 +9,7 @@ package com.mycompany.clinicavet;
  * @author f169401
  */
 public class Vet {
+    private int id;
     private String nome;
     private String email;
     private String telefone;
@@ -17,6 +18,10 @@ public class Vet {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
+    }
+    
+    public int getId() {
+        return id;   
     }
 
     public String getNome() {
@@ -43,5 +48,9 @@ public class Vet {
         this.telefone = telefone;
     }
  
+    @Override
+    public String toSstring() {
+        return this.nome + ", " + this.email + ", " + this.telefone + " \n";
+    }
     
 }
